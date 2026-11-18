@@ -1,0 +1,66 @@
+/* Data-led studio design and first-screen booking */
+:root{--ink:#edf1e9;--green:#182b25;--muted:#a8b5ab;--lime:#d6ed78;--paper:#101814;color-scheme:dark}
+header{border-color:#344139}nav a:hover,.hero-book-link{color:var(--lime)}
+.hero{grid-template-columns:1.15fr 1fr;gap:6%;padding:55px 7%;min-height:760px;align-items:center;background:linear-gradient(90deg,#0b1512f2,#0b1512d9),url('assets/studio-shafts.jpg') center/cover}
+.hero-copy{padding:0}.hero .eyebrow{color:var(--lime)}.studio-name{font-size:15px;color:#d0d9cf;margin:0 0 18px}.hero h1{font-size:clamp(44px,5.3vw,78px);line-height:1.2;letter-spacing:-3px}.hero em{color:var(--lime)}.equipment-line{letter-spacing:3px;font-size:13px;margin:0 0 22px;color:var(--lime)}.hero .lead{color:#c1cbc4}.hero-copy>.button{background:var(--lime);color:#142219}.hero-book-link{font-size:13px;margin-top:20px}.hero-hours{font-size:12px;color:#b5c2b9;margin:28px 0 0}
+.quick-booking{background:#19251ff5;border:1px solid #48564b;padding:28px 30px;min-width:0;box-shadow:0 25px 60px #0004}.quick-booking .eyebrow{margin-bottom:9px}.quick-booking h2{font-size:25px;margin:0}.booking-intro{font-size:12px;color:var(--muted);margin:8px 0 16px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}.form-row>div{min-width:0}.quick-booking label{display:block;margin:8px 0 0}.quick-booking input,.quick-booking select,.quick-booking textarea{padding:11px 2px;min-height:42px;color:#eef3ed}.quick-booking select option{background:#19251f}fieldset{border:0;padding:0;margin:14px 0 0;min-width:0}legend{font-size:12px}.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px 12px}.check-grid label{display:flex;align-items:center;gap:7px;font-size:12px;min-height:30px}.check-grid input{width:16px;height:16px;min-height:0;margin:0;accent-color:var(--lime)}details{margin-top:12px}summary{font-size:12px;cursor:pointer;padding:10px 0}.booking-notice{font-size:11px;color:#c3cfc3;line-height:1.7;margin:10px 0 0}form .button{margin-top:2px}#status{font-size:12px;color:var(--lime)}.booking-phone{display:block;font-size:13px;color:var(--lime);margin-top:12px;text-decoration:underline;text-underline-offset:4px}#booking-copy[hidden]{display:none}
+.ticker{color:#142219}.about{border-color:#344139}.card{background:#1c2a23}.card:hover{background:#293a2f}.card .heading-icon{background:#334637;color:var(--lime)}.process,.studio,.visit-info{background:#18251e}.process li{border-color:#3b4c3e}.visit-info{color:var(--ink)}.map-store-label{background:#24382d}.journal-card{border:1px solid #3a483d;padding:24px}.contact{background:#21382b}.contact-actions{align-self:center}.contact-actions .button{background:var(--lime);color:#142219}.contact-actions p{font-size:12px}.floating-contact{position:fixed;right:22px;bottom:22px;z-index:10;background:var(--lime);color:#142219;padding:15px 21px;border-radius:30px;box-shadow:0 6px 24px #0005;font-size:13px;font-weight:700}.floating-contact.kakao{background:#fee500;color:#191600}footer{padding-bottom:100px}.photo-expand{color:#e8efe2;background:#24382d}
+@media(min-width:1600px){.hero{gap:8%}}@media(max-width:950px){header{padding:0 5%;gap:15px}nav{gap:12px;font-size:10px}.hero{padding:45px 5%;gap:30px;grid-template-columns:1fr 1fr}.quick-booking{padding:24px 20px}.hero h1{font-size:51px}.form-row{gap:10px}}
+@media(max-width:700px){.hero{grid-template-columns:1fr;padding:38px 6%;gap:36px}.hero h1{font-size:52px}.hero-copy{padding:0}.hero .lead{font-size:13px}.quick-booking{padding:25px 20px}.hero-hours{margin-top:22px}.journal-card{padding:16px}.floating-contact{right:14px;bottom:14px}.check-grid{gap:6px}.contact-actions .button{gap:12px}nav{display:none}}
+@media(max-width:360px){.form-row{grid-template-columns:1fr}.hero h1{font-size:44px}.quick-booking{padding:20px 15px}}
+
+/* Preserve the existing expanded navigation, services and business details. */
+body{background:var(--paper);color:var(--ink)}header{background:#101814f5;border-color:#344139}.logo,.business-details strong{color:var(--ink)}.nav-group>summary,.menu-toggle{color:var(--ink)}.nav-group[open]>summary{color:var(--lime)}.nav-submenu{background:#1c2a23;border-color:#3a4a3d}.nav-submenu a{color:#e9eee7}.nav-submenu a:hover{background:#344637}.nav-button{background:var(--lime);color:#142219}.hero{display:grid;flex-direction:initial}.hero-copy{align-items:flex-start;text-align:left;width:auto;background:none}.hero-copy>.eyebrow{color:var(--lime)}.hero-copy .lead{font-size:14px;letter-spacing:0}.hero-copy h1{font-size:clamp(44px,5.3vw,78px);letter-spacing:-3px}.hero-copy .hero-book-link{color:var(--lime)}.hero-copy .hero-hours{font-size:12px;color:#b5c2b9}.service-strip{background:#17241c;color:var(--ink);border-color:#344139}.service-strip>a{border-color:#344139}.service-strip b,.service-strip a>span:last-child{color:var(--lime)}.service-strip small{color:var(--muted)}.about{background:var(--paper)}.about p:not(.eyebrow),.section-top>p,.card p{color:var(--muted)}.menu-note,.care,.product-guide{background:#18251e}.menu-note>p:not(.eyebrow),.info-columns p,.care-note{color:var(--muted)}.menu-note>a:not(.button),.product-guide article>a,.news-section>a,.care-grid a,.visit-phone{color:var(--lime)}.care-grid article,.product-guide article{background:#24352a}.card,.card:hover{background:#1c2a23}.tag{background:#344637;color:#d5dfd1}.studio{background:#101814}.journal-card{background:#1c2a23}.journal-card p{color:var(--muted)}.visit-info{background:#18251e;color:var(--ink)}.map-store-label{background:#24382d;color:var(--ink)}.map-store-label small{color:var(--muted)}.map-placeholder{background:#24382d;color:var(--ink)}.map-pin .ui-icon{color:var(--lime)}.fitting-faq{background:#101814}.faq-list details,.news-section details{border-color:#3b4c3e}.faq-list details[open]{background:#24352a}.faq-list details p{color:var(--muted)}.business-footer{background:#101814;border-color:#344139}.business-details p,.business-details small,.legal-links a{color:#acb9b0}.contact .eyebrow,.contact p{color:#c0d1bd}.booking-links{display:flex;flex-wrap:wrap;gap:12px}.kakao-chat{background:#fee500!important;color:#191600!important}.quick-booking .button{border-radius:6px}.contact-actions .button{border-radius:6px}.mobile-contact{background:#142219}.mobile-contact a{background:#294233}.mobile-contact a+a{background:#fee500;color:#191600}.floating-contact{z-index:50}.quick-booking #status{margin:0;min-height:24px;font-size:12px;color:var(--lime)}#consult{scroll-margin-top:110px}
+@media(max-width:1080px){.main-navigation{border-color:#344139}.nav-group{border-color:#344139}.nav-submenu{background:transparent}.hero{gap:24px}}@media(max-width:700px){.hero{grid-template-columns:1fr}.hero-copy{padding:0}.hero-copy h1{font-size:52px}.hero-copy .lead{font-size:13px}.floating-contact{bottom:82px}.form-row{grid-template-columns:1fr 1fr}.business-footer{padding-bottom:100px}}@media(max-width:360px){.form-row{grid-template-columns:1fr}.hero-copy h1{font-size:44px}}
+
+.equipment-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:0 0 40px}.equipment-summary article{padding:25px;background:#1c2a23;border:1px solid #344139;border-radius:16px}.equipment-summary .eyebrow{color:var(--lime);margin-bottom:15px}.equipment-summary h3{font-size:19px}.equipment-summary p:not(.eyebrow){font-size:13px;color:var(--muted)}@media(max-width:700px){.equipment-summary{grid-template-columns:1fr;gap:12px}}
+
+/* Full-width studio photos and larger captions. */
+#studio .studio-grid{grid-template-columns:minmax(0,1fr);gap:48px}
+#studio .studio-photo img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
+#studio .studio-item figcaption{padding-top:20px}
+#studio .studio-item figcaption>span{font-size:13px;letter-spacing:1.5px}
+#studio .studio-item h3{font-size:28px;line-height:1.5;margin-top:10px}
+@media(max-width:620px){#studio .studio-grid{gap:36px}#studio .studio-item h3{font-size:23px}#studio .studio-item figcaption>span{font-size:12px}}
+
+.booking-honey{display:none!important}.quick-booking .booking-consent{display:flex;gap:10px;align-items:flex-start;font-size:11px;line-height:1.8;margin:10px 0}.booking-consent input{width:17px;height:17px;min-height:0;flex:0 0 auto;margin-top:4px;accent-color:var(--lime)}.booking-consent a{text-decoration:underline;text-underline-offset:3px}
+
+/* Larger, readable type across the homepage. */
+body{font-size:17px;line-height:1.8}
+body .logo{font-size:40px;letter-spacing:-1.6px}
+body .logo small{font-size:12px;letter-spacing:2.8px;margin-top:10px}
+body header{min-height:106px}
+body .main-navigation .nav-group>summary{font-size:15px}
+body .main-navigation .nav-submenu a,body .nav-button,body .menu-toggle{font-size:15px}
+body .hero .studio-name{font-size:28px;font-weight:600;line-height:1.6;margin-bottom:24px}
+body .hero-copy>.eyebrow{font-size:16px;line-height:1.8;letter-spacing:1.8px}
+body .hero .equipment-line{font-size:20px;letter-spacing:2px}
+body .hero-copy .lead{font-size:18px;line-height:1.9}
+body .hero-copy .hero-hours,body .hero .hero-book-link{font-size:16px;line-height:1.9}
+body .eyebrow{font-size:14px;line-height:1.8}
+body h2{font-size:clamp(32px,3.7vw,48px)}
+body h3{font-size:26px;line-height:1.5}
+body main .section p:not(.eyebrow),body .card p,body .journal-card p,body .info-columns p,body .faq-list details p,body .product-guide article p{font-size:17px;line-height:1.95}
+body .principles,body .tag,body .card-top{font-size:14px;line-height:1.8}
+body .button,body .button .button-label,body .direction-button{font-size:16px;line-height:1.6}
+body .service-strip>a{font-size:18px}body .service-strip small{font-size:15px}
+body .quick-booking h2{font-size:32px}body .quick-booking .booking-intro{font-size:16px}
+body .quick-booking label,body .quick-booking legend,body .quick-booking summary{font-size:16px;line-height:1.8}
+body .quick-booking input,body .quick-booking select,body .quick-booking textarea{font-size:16px}
+body .quick-booking .booking-notice,body .quick-booking .booking-consent,body .quick-booking #status{font-size:14px;line-height:1.8}
+body .booking-phone,body .floating-contact{font-size:16px}
+body .equipment-summary h3{font-size:24px}body .equipment-summary p:not(.eyebrow){font-size:17px}
+body #studio .studio-item h3{font-size:32px}body #studio .studio-item figcaption>span{font-size:16px}
+body .visit-details dt{font-size:15px}body .visit-details dd{font-size:18px}body .visit-phone{font-size:25px}
+body .faq-list summary,body .news-section summary{font-size:19px}
+body .business-details p,body .business-details small,body .legal-links a{font-size:14px;line-height:1.9}
+body .contact-actions p{font-size:16px}
+@media(max-width:1080px){body .main-navigation .nav-group>summary,body .main-navigation .nav-submenu a{font-size:17px}body .hero{grid-template-columns:1fr;gap:36px}body .hero-copy{align-items:flex-start;text-align:left;padding:0}body .quick-booking{width:100%;max-width:720px}}
+@media(max-width:620px){body{font-size:16px}body header{min-height:94px}body header .logo{font-size:36px}body .logo small{font-size:11px}body .hero-copy>.eyebrow{font-size:15px;letter-spacing:1.3px;max-width:100%}body .hero .studio-name{font-size:26px}body .hero .equipment-line{font-size:18px}body .hero-copy .lead{font-size:17px}body .hero-copy .hero-hours{font-size:15px}body .quick-booking{padding:25px 18px}body .quick-booking h2{font-size:29px}body .quick-booking .form-row{grid-template-columns:1fr}body .quick-booking .check-grid{grid-template-columns:1fr}body .quick-booking .check-grid label{min-height:40px}body #studio .studio-item h3{font-size:27px}body #studio .studio-item figcaption>span{font-size:14px}body .equipment-summary h3{font-size:23px}body .mobile-contact a{font-size:16px}body .business-details p{overflow-wrap:anywhere}}
+
+/* Requested storefront background and booking hours. */
+.hero{background-image:linear-gradient(90deg,#0b1512d9,#0b151299),url('assets/storefront-hero.jpg');background-position:center;background-size:cover}
+body .quick-booking .booking-hours{font-size:14px;line-height:1.8;color:var(--lime);margin:8px 0}
+.naver-booking{display:flex;align-items:center;justify-content:center;gap:12px;background:#03c75a;color:#fff;font-size:18px;font-weight:700;min-height:56px;padding:14px 20px;border-radius:8px;margin-top:18px}.naver-booking:hover{background:#02ac4d}.naver-booking strong{font-family:Arial,sans-serif;font-size:24px}
+
+.quick-booking .form-row.contact-only{grid-template-columns:minmax(0,1fr)}
