@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { availableTimes, bookingHours, seoulDate } from "@/lib/booking";
-import { siteBasePath, sitePath } from "@/lib/site-path";
+import { reservationReturnUrl, sitePath } from "@/lib/site-path";
 const programItems: Record<string, string> = {
   "드라이버 피팅": "스윙분석",
   "아이언 피팅": "스윙분석",
@@ -93,7 +93,7 @@ export function ReservationForm() {
       <input
         type="hidden"
         name="_next"
-        defaultValue={`https://brgolf.github.io${siteBasePath}/reservation-sent.html`}
+        defaultValue={reservationReturnUrl}
       />
       <input
         type="text"

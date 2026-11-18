@@ -15,6 +15,8 @@ npm run build
 
 개발 주소는 http://localhost:3000/fitting/ 입니다. 정적 빌드 결과는 `out/`에 생성됩니다. 배포 시 기존 `.html` 주소와 `/fitting` 경로를 사용합니다. 페이지와 컴포넌트는 `app/`과 `components/`, CSS와 이미지는 `public/`에 있습니다.
 
+Vercel은 Next.js 프리셋과 시스템 환경 변수 VERCEL=1을 사용합니다. Vercel 홈페이지는 https://fitting-cyan.vercel.app/ 에서 열리며 내부 페이지는 .html 확장자 없이 제공됩니다. GitHub Pages에서는 /fitting 경로와 기존 .html 주소를 사용합니다. 예약 완료 주소는 배포 대상에 맞춰 설정됩니다.
+
 ## 운영 활성화
 1. 홈페이지에서 실제 예약이 아닌 설정 확인용이라고 명시한 테스트 신청을 한 번 제출합니다.
 2. yhjo0720@naver.com 받은메일함 또는 스팸함에서 FormSubmit 인증 이메일을 열고 수신을 활성화합니다.

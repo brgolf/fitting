@@ -1,10 +1,17 @@
-export const siteBasePath = "/fitting";
+export const githubPagesBasePath = "/fitting";
+const onVercel = process.env.SITE_ON_VERCEL === "1";
+const basePath = onVercel ? "" : githubPagesBasePath;
+const siteOrigin = onVercel
+  ? "https://fitting-cyan.vercel.app"
+  : "https://brgolf.github.io";
 
 export function sitePath(path: string): string {
-  // GitHub Pages serves these exported files at their original .html URLs.
-  const localPath =
-    process.env.NODE_ENV === "development"
+  const route =
+    onVercel || process.env.NODE_ENV === "development"
       ? path.replace(/^index\.html(?=#|$)/, "").replace(/\.html(?=#|$)/, "")
       : path;
-  return siteBasePath + "/" + localPath;
+  return basePath + "/" + route;
 }
+
+export const reservationReturnUrl =
+  siteOrigin + sitePath("reservation-sent.html");
