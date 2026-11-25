@@ -1,0 +1,87 @@
+/* Light ivory studio palette. Loaded after the existing brand styles. */
+:root{color-scheme:light;--paper:#f7f5ef;--ink:#243c33;--muted:#56685f;--green:#294e40;--lime:#826b42}
+body{background:var(--paper);color:var(--ink)}
+body h1,body h2,body h3,body .business-footer .logo{color:#243c33}
+body .hero h1 em{color:#476c56}
+body .hero .hero-copy>.eyebrow,body .hero .hero-copy>.studio-name{color:#715b35!important}
+body .hero .booking-preview h2{color:#243c33}
+body header{background:#faf9f4f5;border-color:#dddcd1;min-height:90px;backdrop-filter:blur(16px)}
+body .logo,body .business-details strong{color:#243c33}
+body .main-navigation .nav-group>summary,body .main-navigation .nav-blog-direct{background:transparent;color:#294638;border-color:#d5dbd2}
+body .main-navigation .nav-group>summary:hover,body .main-navigation .nav-blog-direct:hover,body .main-navigation .nav-group[open]>summary{background:#e3e9df;color:#243c33;border-color:#bbc9bd}
+body .nav-submenu{background:#fffefa;border-color:#d5dbd2;box-shadow:0 14px 35px #29463814}
+body .nav-submenu a{color:#294638}body .nav-submenu a:hover{background:#eef1e9}
+body .menu-toggle{color:#294638;border-color:#bcc9bd}
+body .hero{min-height:650px;padding:64px 7%;grid-template-columns:minmax(0,1.15fr) minmax(300px,.8fr);gap:7%;background:#f0f1e9;align-items:center}
+body .hero::before{background-color:#e9eae2;opacity:.24;filter:saturate(.65)}
+body .hero::after{background:linear-gradient(90deg,#f7f5eff0 0%,#f7f5efc9 50%,#f7f5ef80 100%)}
+body .hero-copy h1{font-size:clamp(42px,4.9vw,70px);color:#203c30;line-height:1.22;letter-spacing:-2.4px}
+body .hero-copy>.eyebrow,body .hero .studio-name{color:#715b35}
+body .hero .equipment-logos{margin-top:24px;margin-bottom:22px}
+body .hero-copy .lead,body .hero-copy .hero-hours{color:#425e50}
+body .hero-phone{color:#294e40;border-color:#92a597}
+body .button,body .contact-actions .button{background:#294e40;color:#fffdf6;border-color:#294e40}
+body .button:hover{background:#1d3e30}
+.booking-preview{background:#fffdf7eF;border:1px solid #d7d9cc;border-radius:24px;padding:34px;box-shadow:0 18px 50px #2946380c}
+.booking-preview .eyebrow{color:#826b42;margin-bottom:12px}
+body .booking-preview h2{font-size:30px;line-height:1.4;margin-bottom:16px}
+.booking-preview p{color:#56685f;line-height:1.8}
+.booking-preview .button{display:flex;width:100%;justify-content:space-between;margin-top:24px;cursor:pointer;font:inherit}
+.booking-preview .naver-booking{margin-top:12px;font-size:16px;min-height:48px}
+.booking-preview .booking-phone{color:#294e40;font-size:15px}
+.booking-preview .preview-hours{border-top:1px solid #dedfd5;padding-top:20px;margin-top:24px;font-size:14px}
+body .service-strip{background:#e8ede3;color:#243c33;border-color:#d3dacd}
+body .service-strip>a{border-color:#cbd5c7}body .service-strip small{color:#56685f}
+body .service-strip b,body .service-strip a>span:last-child{color:#826b42}
+body .section{padding-top:72px;padding-bottom:72px}
+body .about,body .studio,body .fitting-faq,body .news-section,body #journal,body #cases{background:#f7f5ef;border-color:#d9ded2}
+body .care,body .product-guide,body .menu-note,body .process,body .visit-info{background:#edf0e7;color:#243c33;border-color:#d9ded2}
+body .about h2 span,body h2 span{color:#58725f}
+body .eyebrow,body .principles{color:#826b42}
+body main .section p:not(.eyebrow),body .section-top>p,body .info-columns p,body .care-note,body .product-guide article p{color:#56685f}
+body .card,body .card:hover,body .care-grid article,body .product-guide article,body .equipment-summary article,body .journal-card{background:#fffefa;border:1px solid #dce1d5;box-shadow:0 5px 22px #29463804}
+body .card-top{color:#826b42}body .card h3{color:#243c33}
+body .tag{background:#e8ede3;color:#415d4a}
+body .program-photo{height:280px;display:flex;align-items:center;justify-content:center;background:#e9ece3;margin-top:20px;margin-bottom:22px}
+body .program-photo img,body .program-photo img.driver-product-photo,body .program-photo img.fullbag-product-photo{width:100%;height:100%;max-height:none;aspect-ratio:auto;object-fit:contain;background:#e9ece3}
+body .care-grid img{width:100%;height:350px;aspect-ratio:auto;object-fit:contain;background:#e9ece3}
+body .product-guide img{height:260px;object-fit:contain;background:#eef0e9}
+body #studio .studio-photo img{height:220px;max-height:32svh;object-fit:cover}
+body #studio .studio-item h3{font-size:23px}
+body .process li{border-color:#c8d3c4}body .process li p{color:#56685f}
+body .measurement-card{background:#fffefa;border-color:#d0d8c8;border-top-color:#af966b}
+body .about .measurement-card h3{color:#243c33}
+body main .about.section .measurement-card p:not(.method-brand){color:#56685f}
+body .about .measurement-card .method-brand{color:#826b42!important}
+body .equipment-summary article p:not(.eyebrow){color:#56685f}
+body .menu-note>a:not(.button),body .care-grid a,body .product-guide article>a,body .news-section>a,body .visit-phone,body .blog-list-heading>a{color:#315a45}
+body .map-store-label{background:#dfe7d8;color:#243c33}body .map-store-label small{color:#56685f}
+body #journal .blog-post-list,body #journal .blog-post{border-color:#d3dbce}
+body #journal .blog-post time{color:#637366}body #journal .blog-post h3{color:#243c33}
+body #journal .blog-post:hover h3{color:#826b42}body #journal .blog-post-arrow{color:#826b42}
+body #journal .blog-post[hidden]{display:none}
+.blog-more{display:block;margin:28px auto 0;padding:12px 26px;min-height:48px;background:#fffefa;color:#294e40;border:1px solid #b7c5b2;border-radius:30px;font:inherit;cursor:pointer}
+.blog-more:hover{background:#e8ede3}.blog-count{text-align:center;color:#637366;font-size:14px;margin-top:16px}
+body .faq-list details,body .news-section details{border-color:#cdd7c7}
+body .faq-list details[open]{background:#fffefa}body .faq-list details p{color:#56685f}
+body .contact{background:#dfe7d8;color:#243c33}body .contact p,body .contact .eyebrow,body .contact-actions p{color:#425e50}
+body .business-footer{background:#f2f1e9;border-color:#d5dbce}
+body .business-details p,body .business-details small,body .legal-links a{color:#56685f}
+.booking-dialog{border:1px solid #cbd6cb;border-radius:22px;padding:0;width:min(560px,calc(100vw - 28px));max-height:calc(100svh - 32px);background:#f4f6f0;color:#243c33;box-shadow:0 30px 100px #132c3540;overflow:auto;overscroll-behavior:contain}
+.booking-dialog::backdrop{background:#18352980;backdrop-filter:blur(5px)}
+.booking-dialog .dialog-toolbar{display:flex;justify-content:flex-end;padding:12px 16px 0;background:#f4f6f0;position:sticky;top:0;z-index:5}
+.booking-close{border:1px solid #b7c5b8;border-radius:22px;background:#fffefa;color:#294638;font:inherit;padding:6px 14px;cursor:pointer}
+body .booking-dialog .quick-booking{background:#f4f6f0;box-shadow:none;border:0;border-radius:0;padding:12px 26px 24px;max-height:none;display:block;width:100%;color:#243c33}
+body .booking-dialog .quick-booking #consult{display:block;overflow:visible;max-height:none;flex:none;padding:0}
+body .booking-dialog .quick-booking #consult>.button{position:static;width:100%;margin-top:18px;box-shadow:none;min-height:48px;display:flex;justify-content:space-between}
+body .booking-dialog .quick-booking .booking-intro{font-size:15px}
+body .booking-dialog .quick-booking h2{font-size:28px}
+body .booking-dialog .quick-booking #consult .form-row{grid-template-columns:1fr 1fr;gap:14px}
+body .booking-dialog .quick-booking #consult .contact-only{grid-template-columns:1fr}
+body .booking-dialog .quick-booking #consult .check-grid{grid-template-columns:1fr 1fr}
+body .booking-dialog .quick-booking .booking-notice,body .booking-dialog .quick-booking .booking-consent{font-size:13px;line-height:1.7}
+body:has(.booking-dialog[open]){overflow:hidden}
+:focus-visible{outline:3px solid #826b42;outline-offset:4px}
+@media(max-width:1080px){body .hero{grid-template-columns:1fr 1fr;gap:30px}body .main-navigation{background:#faf9f4}body .hero-copy h1{font-size:48px}}
+@media(max-width:700px){body header{min-height:80px}body .hero{grid-template-columns:1fr;padding:38px 6%;gap:28px;min-height:0}body .hero-copy h1{font-size:43px}body .hero-copy .hero-hours{font-size:14px}body .hero .equipment-logos{margin-top:20px;margin-bottom:18px}.booking-preview{padding:24px}body .section{padding:50px 6%}body .program-photo{height:280px}body .care-grid img{height:320px}body .product-guide img{height:250px}body #studio .studio-photo img{height:190px}body .booking-dialog .quick-booking{padding:10px 18px 22px}body .mobile-contact{background:#f7f5ef}body .mobile-contact a{background:#294e40;color:white}body .mobile-contact a+a{background:#fee500;color:#191600}body .floating-contact{font-size:14px}body #journal .blog-post h3{font-size:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}body .hero::before{animation:none}}

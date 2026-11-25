@@ -32,6 +32,7 @@ export function PageStyles({
         precedence="site"
       />
       <link rel="stylesheet" href={sitePath("brand.css")} precedence="site" />
+      {planning && <link rel="stylesheet" href={sitePath("refinement.css")} precedence="site" />}
     </>
   );
 }

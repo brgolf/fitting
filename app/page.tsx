@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageStyles } from "@/components/PageStyles";
 import { sitePath } from "@/lib/site-path";
 import { HomeHeader } from "@/components/HomeHeader";
+import { ReservationBooking } from "@/components/ReservationBooking";
 import { ReservationForm } from "@/components/ReservationForm";
 import { PhotoDialog } from "@/components/PhotoDialog";
 import { BlogPosts } from "@/components/BlogPosts";
@@ -65,7 +66,7 @@ export default function Page() {
               사직야구장 맞은편 · 지하 2~3층 무료주차 (삼정자이언츠파크)
             </p>
           </div>
-          <aside className="quick-booking" aria-labelledby="booking-title">
+          <ReservationBooking><aside className="quick-booking" aria-labelledby="booking-title">
             <p className="eyebrow">RESERVATION / 100% 예약제</p>
             <h2 id="booking-title">시타 및 피팅 예약</h2>
             <p className="booking-intro">
@@ -83,7 +84,7 @@ export default function Page() {
             <a className="booking-phone" href="tel:050713905980">
               전화로 예약하기 · 0507-1390-5980 ↗
             </a>
-          </aside>
+          </aside></ReservationBooking>
         </section>
         <div className="service-strip">
           <a href="#programs">

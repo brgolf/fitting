@@ -24,7 +24,20 @@ export function parseCatalogJson(raw) {
   // Normalize only that non-JSON escape; never evaluate the response as code.
   return JSON.parse(raw.replace(/(\\+)'/g, (_, slashes) => (slashes.length % 2 ? slashes.slice(0,-1) : slashes) + "'"));
 }
-export function normalizeCatalog(pages) {
+export function parseRssDates(xml) {
+  if (!xml.includes('<rss')) throw new Error('Invalid RSS response');
+  const dates = new Map();
+  for (const match of xml.matchAll(/<item\b[^>]*>([\s\S]*?)<\/item>/g)) {
+    const id = match[1].match(/yhjo0720\/(\d+)/)?.[1];
+    const raw = match[1].match(/<pubDate>([^<]+)<\/pubDate>/)?.[1];
+    const timestamp = Date.parse(raw || '');
+    if (id && Number.isFinite(timestamp)) {
+      dates.set(id, new Date(timestamp + 9 * 60 * 60 * 1000).toISOString().slice(0,10).replace(/-/g,'.'));
+    }
+  }
+  return dates;
+}
+export function normalizeCatalog(pages, dates = new Map()) {
   const expected = Number(pages[0]?.totalCount);
   if (!Number.isSafeInteger(expected) || expected < 1 || expected > 5000) throw new Error('Invalid public post count');
   const seen = new Set();
@@ -35,10 +48,13 @@ export function normalizeCatalog(pages) {
       const id = String(item.logNo);
       if (!/^\d+$/.test(id) || seen.has(id)) throw new Error('Invalid or duplicate post ID');
       const title = decodeURIComponent(item.title.replace(/\+/g, ' '));
-      const parts = item.addDate.replace(/\s/g, '').replace(/\.$/, '').split('.');
-      if (!title.trim() || parts.length !== 3 || parts.some(p => !/^\d+$/.test(p))) throw new Error('Invalid post title/date');
+      const rawDate = String(item.addDate || '').trim();
+      const parts = rawDate.replace(/\s/g, '').replace(/\.$/, '').split('.');
+      const absolute = parts.length === 3 && parts.every(p => /^\d+$/.test(p));
+      const relative = /^(?:\d+\s*(?:초|분|시간|일)\s*전|방금\s*전|오늘|어제)$/.test(rawDate);
+      if (!title.trim() || (!absolute && !relative)) throw new Error(`Invalid post title/date: ${id} (${rawDate})`);
       seen.add(id);
-      posts.push({title, url:`${BLOG}/${id}`, date:parts.map((p,i)=>i ? p.padStart(2,'0') : p).join('.')});
+      posts.push({title, url:`${BLOG}/${id}`, date:absolute ? parts.map((p,i)=>i ? p.padStart(2,'0') : p).join('.') : (dates.get(id) || rawDate)});
     }
   }
   if (posts.length !== expected) throw new Error(`Partial blog list: ${posts.length}/${expected}; keeping old list`);
@@ -96,8 +112,8 @@ export async function syncBlog(root) {
   if (!Number.isSafeInteger(total) || total<1 || total>5000) throw new Error('Invalid catalog; no site changes written');
   const pages=[first];
   for(let page=2;page<=Math.ceil(total/30);page++) pages.push(parseCatalogJson(await text(`https://blog.naver.com/PostTitleListAsync.naver?blogId=yhjo0720&currentPage=${page}&countPerPage=30`)));
-  const posts=normalizeCatalog(pages);
-  let rss=new Map();try{rss=parseRss(await text('https://rss.blog.naver.com/yhjo0720.xml'));}catch(error){console.warn(`RSS unavailable: ${error.message}`);}
+  let rss=new Map(), dates=new Map();try{const xml=await text('https://rss.blog.naver.com/yhjo0720.xml');rss=parseRss(xml);dates=parseRssDates(xml);}catch(error){console.warn(`RSS unavailable: ${error.message}`);}
+  const posts=normalizeCatalog(pages,dates);
   const overrides=await readJson('blog-thumbnail-overrides.json',{});
   const previous=new Map((await readJson('blog-posts.json',[])).map(p=>[p.url,p]));
   for(const post of posts) post.image=await imageFor(post,root,overrides,previous,rss);
